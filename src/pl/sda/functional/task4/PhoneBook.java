@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @ToString
-@NoArgsConstructor(access = AccessLevel.PACKAGE)
+@NoArgsConstructor
 public class PhoneBook {
 
     private static final HashMap<String, String> PHONE_NUMBERS = new HashMap<>();
