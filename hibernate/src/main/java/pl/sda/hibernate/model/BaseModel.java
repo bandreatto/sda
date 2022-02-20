@@ -8,6 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+// Wykorzystanie adnotacji @MapperSuperclass
+// celem współdzielnie atrybutów na poziomie poszczególnych encji.
+// W ramach współdzielenia atrybutów wykorzystujemy mechanizm dziedziczenia.
 @MappedSuperclass
 @Getter
 @Setter

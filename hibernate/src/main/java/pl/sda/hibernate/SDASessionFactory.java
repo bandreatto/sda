@@ -13,6 +13,7 @@ public class SDASessionFactory {
 
     private static SessionFactory sessionFactory;
 
+    // Definicja fabryki sesji w oparciu o wzorzec konstrukcyjny: Singleton
     public SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             StandardServiceRegistry standardRegistry
@@ -28,7 +29,7 @@ public class SDASessionFactory {
     public static void main(String[] args) {
         SDASessionFactory sdaSessionFactory = new SDASessionFactory();
         SessionFactory sessionFactory = sdaSessionFactory.getSessionFactory();
-        log.info("Got sesssion Factory...");
+        log.info("Got session factory...");
         try (Session session = sessionFactory.openSession()) {
             log.info("Got session...");
         }

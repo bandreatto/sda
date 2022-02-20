@@ -21,6 +21,10 @@
 
         <mapping class="pl.sda.hibernate.model.Czytelnik"/>
         <mapping class="pl.sda.hibernate.model.Kategoria"/>
-<!--        <mapping class="pl.sda.hibernate.model.Czytelnik"/>-->
+        <mapping class="pl.sda.hibernate.model.Bibliotekarz"/>
+        <mapping class="pl.sda.hibernate.model.Admin"/>
+        <mapping class="pl.sda.hibernate.model.Logowanie"/>
+        <mapping class="pl.sda.hibernate.model.Adres"/>
+        <mapping class="pl.sda.hibernate.model.Ksiazka"/>
     </session-factory>
 </hibernate-configuration>

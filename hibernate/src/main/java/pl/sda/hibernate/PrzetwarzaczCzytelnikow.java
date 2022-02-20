@@ -8,18 +8,12 @@ import pl.sda.hibernate.model.Czytelnik;
 @Slf4j
 public class PrzetwarzaczCzytelnikow {
 
-    private static final SDASessionFactory SDA_SESSION_FACTORY
-            = new SDASessionFactory();
+    private static final SessionFactory SESSION_FACTORY
+            = new SDASessionFactory().getSessionFactory();
 
     public void wypiszCzytelnika(Long id) {
-//        try (SessionFactory sessionFactory = SDA_SESSION_FACTORY.getSessionFactory()) {
-//            try (Session session = sessionFactory.openSession()) {
-//
-//            }
-//        }
-
-        try (SessionFactory sessionFactory = SDA_SESSION_FACTORY.getSessionFactory();
-             Session session = sessionFactory.openSession()) {
+        try (Session session = SESSION_FACTORY.openSession()) {
+            // Porównanie metod load oraz get (lazy-loading oraz eager-loading)
 //            Czytelnik czytelnik = session.load(Czytelnik.class, id);
             Czytelnik czytelnik = session.get(Czytelnik.class, id);
             log.info(czytelnik.toString());

@@ -1,14 +1,13 @@
 package pl.sda.hibernate.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "kategoria")
-@Getter
-@Setter
+@Data
 public class Kategoria {
 
     @Id
@@ -17,4 +16,11 @@ public class Kategoria {
     private Long id;
 
     private String nazwa;
+
+    // Mapowanie relacji 1:wiele.
+    // W ramach adnotacji @OneToMany wskazujemy pole po przeciwnej stronie relacji
+    // (w encji Ksiazka), które referuje do bieżącej encji
+    // (w zdecydowanej większości przypadków pole, przy którym znajduje się adnotacja @JoinColumn)
+    @OneToMany(mappedBy = "kategoria")
+    private List<Ksiazka> ksiazki;
 }
